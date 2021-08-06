@@ -124,6 +124,18 @@ function generateQuery( clean ){
     });
   }
 
+  if (!_.isUndefined(config.get('api')['autocomplete.focus.offset'])) {
+    vs.var('focus:offset', config.get('api')['autocomplete.focus.offset']);
+  }
+
+  if (!_.isUndefined(config.get('api')['autocomplete.focus.scale'])) {
+    vs.var('focus:scale', config.get('api')['autocomplete.focus.scale']);
+  }
+
+  if (!_.isUndefined(config.get('api')['autocomplete.focus.weight'])) {
+    vs.var('focus:weight', config.get('api')['autocomplete.focus.weight']);
+  }
+
   // boundary rect
   if( _.isFinite(clean['boundary.rect.min_lat']) &&
       _.isFinite(clean['boundary.rect.max_lat']) &&
